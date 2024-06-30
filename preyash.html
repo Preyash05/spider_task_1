@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="preyashstyle.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Recipe Finder</h1>
+      <nav>
+        <button id="login-button">Login</button>
+        <button id="logout-button" style="display: none;">Logout</button>
+        <span id="welcome-message" style="display: none;">Welcome, <span id="username"></span></span>
+      </nav>
+    </header>
+    <main>
+      <section id="filters">
+        <h2>Filters</h2>
+        <div class="filter-group">
+          <label for="cuisine-filter">Cuisine:</label>
+          <select id="cuisine-filter">
+            <option value="">Any</option>
+            <option value="International">International</option>
+            <option value="European">European</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Asian">Asian</option>
+            <option value="Vegetarian">Vegetarian</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="prep-time-filter">Preparation Time (mins):</label>
+          <input type="number" id="prep-time-filter" min="0" step="5">
+        </div>
+        <div class="filter-group">
+          <label for="dietary-filter">Dietary Restrictions:</label>
+          <select id="dietary-filter">
+            <option value="">Any</option>
+            <option value="Gluten-free">Gluten-free</option>
+            <option value="Dairy-free">Dairy-free</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Low Carb">Low Carb</option>
+            <option value="Vegan">Vegan</option>
+          </select>
+        </div>
+      </section>
+      <section id="ingredient-selection">
+        <h2>Select Ingredients</h2>
+        <form id="ingredient-form">
+          <div class="ingredient-checkboxes">
+            <label><input type="checkbox" value="chicken"> Chicken</label>
+            <label><input type="checkbox" value="soya"> Soya</label>
+            <label><input type="checkbox" value="potato"> Potato</label>
+            <label><input type="checkbox" value="carrot"> Carrot</label>
+            <label><input type="checkbox" value="onion"> Onion</label>
+            <label><input type="checkbox" value="garlic"> Garlic</label>
+            <label><input type="checkbox" value="tomato"> Tomato</label>
+            <label><input type="checkbox" value="lettuce"> Lettuce</label>
+            <label><input type="checkbox" value="cheese"> Cheese</label>
+            <label><input type="checkbox" value="egg"> Egg</label>
+          </div>
+          <button type="submit">Find Recipes</button>
+        </form>
+      </section>
+      <section id="recipes-container">
+        <h2>Possible Recipes</h2>
+       
+      </section>
+      <section id="saved-recipes">
+        <h2>Saved Recipes</h2>
+        <div id="saved-recipes-container">
+          
+        </div>
+      </section>
+      <section id="publish-recipe">
+        <h2>Publish Your Recipe</h2>
+        <form id="publish-recipe-form">
+          <label for="recipe-name">Recipe Name:</label>
+          <input type="text" id="recipe-name" required>
+          <br>
+          <label for="recipe-image">Image URL:</label>
+          <input type="text" id="recipe-image" required>
+          <br>
+          <label for="recipe-ingredients">Ingredients (comma separated):</label>
+          <input type="text" id="recipe-ingredients" required>
+          <br>
+          <label for="recipe-instructions">Instructions:</label>
+          <textarea id="recipe-instructions" required></textarea>
+          <br>
+          <label for="recipe-cuisine">Cuisine:</label>
+          <input type="text" id="recipe-cuisine" required>
+          <br>
+          <label for="recipe-prep-time">Preparation Time (mins):</label>
+          <input type="number" id="recipe-prep-time" required>
+          <br>
+          <label for="recipe-dietary">Dietary Restrictions (comma separated):</label>
+          <input type="text" id="recipe-dietary" required>
+          <br>
+          <button type="submit">Publish Recipe</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" required>
+        <br>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" required>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+      <h2>Register</h2>
+      <form id="register-form">
+        <label for="register-username">Username:</label>
+        <input type="text" id="register-username" required>
+        <br>
+        <label for="register-password">Password:</label>
+        <input type="password" id="register-password" required>
+        <br>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="preyashscript.js"></script>
+</body>
+</html>
